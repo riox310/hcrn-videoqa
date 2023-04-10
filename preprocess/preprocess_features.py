@@ -1,6 +1,6 @@
 import argparse, os
 import h5py
-from scipy.misc import imresize
+from skimage.transform import resize
 import skvideo.io
 from PIL import Image
 
@@ -115,7 +115,7 @@ def extract_clips_with_consecutive_frames(path, num_clips, num_frames_per_clip):
         for j in range(num_frames_per_clip):
             frame_data = clip[j]
             img = Image.fromarray(frame_data)
-            img = imresize(img, img_size, interp='bicubic')
+            img = resize(img, img_size, mode='reflect')
             img = img.transpose(2, 0, 1)[None]
             frame_data = np.array(img)
             new_clip.append(frame_data)

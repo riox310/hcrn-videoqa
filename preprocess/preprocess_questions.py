@@ -22,9 +22,9 @@ if __name__ == '__main__':
     np.random.seed(args.seed)
 
     if args.dataset == 'tgif-qa':
-        args.annotation_file = '/ceph-g/lethao/datasets/tgif-qa/csv/{}_{}_question.csv'
+        args.annotation_file = 'C:\Users\Admin\OneDrive - VNU-HCMUS\Documents\GitHub\hcrn-videoqa\dataset\Total_{}_question.csv'
         args.output_pt = 'data/tgif-qa/{}/tgif-qa_{}_{}_questions.pt'
-        args.vocab_json = 'data/tgif-qa/{}/tgif-qa_{}_vocab.json'
+        args.vocab_json = 'data/tgif-qa/{}/tgif-qa_{}_vocab.json' 
         # check if data folder exists
         if not os.path.exists('data/tgif-qa/{}'.format(args.question_type)):
             os.makedirs('data/tgif-qa/{}'.format(args.question_type))

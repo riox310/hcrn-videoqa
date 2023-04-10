@@ -1,7 +1,7 @@
 import argparse, os
 import h5py
 from skimage.transform import resize
-import skvideo.io
+
 from PIL import Image
 
 import torch
